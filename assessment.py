@@ -97,13 +97,13 @@ instance attribute"""
 class A:
    class_attribute = 10
    def class_method(self):
-       self.instance_attribute = 'I am instance attribute'
+       self.instance_attribute='I am instance attribute'
 print A.__dict__
 #{'__module__': '__main__', 'class_method': <function class_method at 0x10978ab18>, 'class_attribute': 10, '__doc__': None}
 #########################
 
 # instance attributes as A().__dict__:
-a = A() 
+a=A() 
 a.class_method()
 print a.__dict__
 # {'instance_attribute': 'I am instance attribute'}
@@ -118,22 +118,22 @@ print a.__dict__
 class Person:
 
     def __init__(self, name, birthday, address, phone_number, email_address):
-        self.name = name
-        self.birthday = birthday
-        self.address = address
-        self.phone_number = phone_number
-        self.email_address = email_address
+        self.name=name
+        self.birthday=birthday
+        self.address=address
+        self.phone_number=phone_number
+        self.email_address=email_address
 
     def age(self):
-        today = datetime.date.today()
-        age = today.year - self.birthday.year
+        today=datetime.date.today()
+        age=today.year - self.birthday.year
 
         if today < datetime.date(today.year, self.birthday.month, self.birthday.day):
-            age -= 1
+            age-=1
 
         return age
 
-person = Person(
+person=Person(
     "Elizabeth",
     "Bland",
     datetime.date(1979, 10, 11), 
@@ -152,12 +152,12 @@ def age(self):
     if hasattr(self, "_age"):
         return self._age
 
-    today = datetime.date.today()
+    today=datetime.date.today()
 
-    age = today.year - self.birthday.year
+    age=today.year - self.birthday.year
 
     if today < datetime.date(today.year, self.birthday.month, self.birthday.day):
-        age -= 1
+        age-=1
 
     self._age = age
     return age
@@ -176,7 +176,6 @@ class Person:
 
 
 """Part 2: Classes and Init Methods""" """Part 2: Classes and Init Methods"""
-
 
 class Student(object):
     """1. Student"""
@@ -257,7 +256,7 @@ class Exam(object):
 
     def administer(self):
         """Administer all of the exam's questions and return score"""
-        score = 0
+        score=0
         # Loop through objects (Question) call ask_and_evaluate() for object
         for question in self.questions:
             if question.ask_and_evaluate() is True:
@@ -272,7 +271,7 @@ class Exam(object):
 def take_test(exam, student):
     """Administer the exam for a student and assign score to student"""
 
-    student.score = exam.administer()
+    student.score=exam.administer()
     return student.score
 
 def example(exam_name, student_first_name, student_last_name, student_address):
@@ -283,9 +282,11 @@ def example(exam_name, student_first_name, student_last_name, student_address):
     example_student = Student(student_first_name, student_last_name, student_address)
     print take_test(example_exam, example_student)
 
-
+"""?????????????????????????"""
+    # def __repr__(self):
+    # return self.__str__()
+      
 """Part 5: Inheritance"""
-
 
 class Quiz(Exam):
     """Quiz
@@ -301,10 +302,11 @@ class Quiz(Exam):
         else:
             return True
 
-# # Below lines of code are for testing
-# quiz = Quiz("first quiz")
-# quiz.add_question("Who is Ubermelon's competition?", "Sqysh")
-# quiz.add_question("What is the method for adding an element to a set?", ".add()")
+         """?????????????????????????"""
+    # def __repr__(self):
+    # return self.__str__()
+
+
 
 
 
